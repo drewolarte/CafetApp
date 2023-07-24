@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
+
+<head>
+	<title>CafetApp</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lato&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/stilos.css">
+	<link rel="icon" type="image/x-icon" href="../../img/logo.png">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+	<div class="container">
+		<br>
+		<br>
+		<div class="d-flex justify-content-center">
+			<img src="../../img/logo.png" alt="logo" class="img" id="logo">
+		</div>
+		<br>
+		<h1 class="text-center" id="titulo" th:text="${colegio.nombre}"></h1>
+		<br>
+		<h2 class="text-center" id="titulo" th:text="'Bienvenido '+${acudiente.nombres}+' '+${acudiente.apellidos}">
+		</h2>
+		<br>
+		<h4 class="text-center container d-flex justify-content-center align-items-center" id="titulo"
+			th:if="${estudiantes.size()==0}"> <span class="material-symbols-outlined me-2">
+				notification_important
+			</span>EL ACUDIENTE NO TIENE ESTUDIANTES ASOCIADOS </h4>
+		<br th:if="${estudiantes.size()==0}">
+		<div class="d-flex flex-row justify-content-center flex-wrap">
+			<div class="card mx-5 mb-5" id="card" th:each="estudiante:${estudiantes}">
+				<div class="card-body d-flex flex-column justify-content-center align-items-center">
+					<h4 class=" text-center" th:text="${estudiante.nombres}+' '+${estudiante.apellidos}"></h4>
+					<img src="../../img/estudiante.png" alt="logo" class="img my-2" id="estudiante">
+					<strong>Documento de Identidad:</strong>
+					<span th:text="${estudiante.id}" id="data"></span>
+					<strong>Fecha de Nacimiento:</strong>
+					<span th:text="${estudiante.fechaNacimiento}" id="data"></span>
+					<strong class="mt-3">Saldo:</strong>
+					<span th:text="'$ '+${estudiante.saldo}+' COP'" id="data"></span>
+					<a th:href="@{/acudiente/saldo/}+${colegio.id}+@{/}+${acudiente.id}+@{/}+${estudiante.id}"
+						class="btn container d-flex justify-content-center align-items-center mb-2"
+						id="aregresar">RECARGAR<span class="material-symbols-outlined ms-3">
+							paid
+						</span></a>
+					<strong class="mt-3">Tope Diario:</strong>
+					<span th:text="Ninguno." id="data" th:if="${estudiante.topeDiario}==0"></span>
+					<span th:text="'$ '+${estudiante.topeDiario}+' COP'" id="data"
+						th:if="${estudiante.topeDiario}>0"></span>
+					<a th:href="@{/acudiente/topeDiario/}+${colegio.id}+@{/}+${acudiente.id}+@{/}+${estudiante.id}"
+						class="btn container d-flex justify-content-center align-items-center mb-2"
+						id="aregresar">GESTIONAR<span class="material-symbols-outlined ms-3">
+							attach_money
+						</span></a>
+					<strong class="mt-2">Restricciones:</strong>
+					<span th:text="${estudiante.restricciones}" id="data" class="text-center"></span>
+					<a th:href="@{/acudiente/restricciones/}+${colegio.id}+@{/}+${acudiente.id}+@{/}+${estudiante.id}"
+						class="btn container d-flex justify-content-center align-items-center mb-2"
+						id="aregresar">GESTIONAR<span class="material-symbols-outlined ms-3">
+							format_list_bulleted_add
+						</span></a>
+					<strong class="mt-2">Historial Compras</strong>
+					<a th:href="@{/acudiente/historial/}+${colegio.id}+@{/}+${acudiente.id}+@{/}+${estudiante.id}"
+						class="btn container d-flex justify-content-center align-items-center mb-2"
+						id="aregresar">VISUALIZAR<span class="material-symbols-outlined ms-3">
+							visibility
+						</span></a>
+				</div>
+			</div>
+		</div>
+		<button class="container d-flex justify-content-center btn mb-1" type="submit" id="bregresar">
+			<a th:href="@{/acudiente/}+${colegio.id}" class="btn" id="aregresar">CERRAR SESIÓN</a>
+		</button>
+	</div>
+	<br>
+	</div>
+</body>
+
+</html>

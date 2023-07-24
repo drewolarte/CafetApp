@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
+
+<head>
+	<title>CafetApp</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lato&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/stilos.css">
+	<link rel="icon" type="image/x-icon" href="img/logo.png">
+</head>
+
+<body>
+	<div class="container">
+		<br>
+		<div class="d-flex justify-content-center">
+			<img src="img/logo.png" alt="logo" class="img" id="logo">
+		</div>
+		<br>
+		<h1 class="text-center" id="titulo">Cafeterías Escolares</h1>
+		<br>
+		<div th:each="colegio:${colegios}">
+			<button class="container d-flex justify-content-center btn mb-1" type="submit" id="boton">
+				<a th:href="@{/}+${colegio.id}" class="btn" id="button" th:text="${colegio.nombre}"></a>
+			</button>
+		</div>
+		<br>
+	</div>
+</body>
+
+</html>

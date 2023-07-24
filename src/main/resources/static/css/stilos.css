@@ -1,0 +1,155 @@
+#titulo {
+	color: #CB4D00;
+	font-family: 'Kaushan Script', cursive;
+}
+
+body {
+	background-image: url("../../img/slider.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: 'Lato', sans-serif;
+}
+
+#button {
+	border-color: #CB4D00;
+	color: #CB4D00;
+	font-weight: bold;
+	width: 280px;
+}
+
+#button:hover {
+	background-color: #a83e01;
+	border-color: #a83e01;
+	color: white;
+}
+
+#boton {
+	width: 280px;
+}
+
+#logo {
+	width: 150px;
+}
+
+#estudiante {
+	width: 100px;
+}
+
+#aregresar {
+	border-color: #CB4D00;
+	color: #CB4D00;
+	font-weight: bold;
+	width: 180px;
+}
+
+#bregresar {
+	width: 180px;
+}
+
+#aregresar:hover {
+	background-color: #a83e01;
+	border-color: #a83e01;
+	color: white;
+}
+
+#login {
+	width: 300px;
+	color: #CB4D00;
+}
+
+#floating {
+	border-color: #CB4D00;
+}
+
+#floating:focus+label {
+	color: #CB4D00;
+}
+
+#floating:focus {
+	box-shadow: 0 0 8px #CB4D00;
+}
+
+#floating:not(:placeholder-shown)+label {
+	color: #CB4D00;
+}
+
+#card {
+	width: 18rem;
+	background-color: transparent;
+	border-color: #a83e01;
+	color: #a83e01;
+	font-weight: bolder;
+	box-shadow: 0 0 8px #CB4D00;
+}
+
+#tabla {
+	border-color: #a83e01;
+	box-shadow: 0 0 8px #CB4D00;
+}
+
+#fila {
+	color: #a83e01;
+}
+
+#acciones {
+	color: #a83e01;
+}
+
+#data {
+	color: #a83e01;
+	font-weight: 590;
+}
+
+#textarea {
+	border-color: #CB4D00;
+	height: 150px;
+}
+
+#textarea:focus+label {
+	color: #CB4D00;
+}
+
+#textarea:focus {
+	box-shadow: 0 0 8px #CB4D00;
+}
+
+#textarea:not(:placeholder-shown)+label {
+	color: #CB4D00;
+}
+
+#buscar {
+	width: 500px;
+	color: #CB4D00;
+}
+
+#bbuscar {
+	width: 140px;
+}
+
+#abuscar {
+	border-color: #CB4D00;
+	color: #CB4D00;
+	font-weight: bold;
+	width: 140px;
+}
+
+#abuscar:hover {
+	background-color: #a83e01;
+	border-color: #a83e01;
+	color: white;
+}
+
+#formCompra {
+	width: 300px;
+	height: 450px;
+	color: #CB4D00;
+	border-color: #CB4D00;
+	box-shadow: 0 0 8px #CB4D00;
+	background-color: transparent;
+}
+
+#modal {
+	border-color: #a83e01;
+}
